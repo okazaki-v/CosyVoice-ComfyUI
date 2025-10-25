@@ -1,0 +1,195 @@
+{
+  "last_node_id": 16,
+  "last_link_id": 15,
+  "nodes": [
+    {
+      "id": 15,
+      "type": "TextNode",
+      "pos": [
+        126,
+        426
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "TEXT",
+          "links": [
+            14
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextNode"
+      },
+      "widgets_values": [
+        "Theo \\'Crimson\\', is a fiery, passionate rebel leader. Fights with fervor for justice, but struggles with impulsiveness."
+      ]
+    },
+    {
+      "id": 14,
+      "type": "SaveAudio",
+      "pos": [
+        962,
+        166
+      ],
+      "size": {
+        "0": 315,
+        "1": 100
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 15
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveAudio"
+      },
+      "widgets_values": [
+        "audio/ComfyUI",
+        null
+      ]
+    },
+    {
+      "id": 2,
+      "type": "TextNode",
+      "pos": [
+        77,
+        137
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "TEXT",
+          "type": "TEXT",
+          "links": [
+            13
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextNode"
+      },
+      "widgets_values": [
+        "在面对挑战时，他展现了非凡的<strong>勇气</strong>与<strong>智慧</strong>。'"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "CosyVoiceNode",
+      "pos": [
+        569,
+        117
+      ],
+      "size": {
+        "0": 315,
+        "1": 214
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "tts_text",
+          "type": "TEXT",
+          "link": 13
+        },
+        {
+          "name": "prompt_text",
+          "type": "TEXT",
+          "link": null
+        },
+        {
+          "name": "prompt_wav",
+          "type": "AUDIO",
+          "link": null
+        },
+        {
+          "name": "instruct_text",
+          "type": "TEXT",
+          "link": 14,
+          "slot_index": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            15
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CosyVoiceNode"
+      },
+      "widgets_values": [
+        1,
+        "预训练音色",
+        "中文女",
+        368,
+        "randomize"
+      ]
+    }
+  ],
+  "links": [
+    [
+      13,
+      2,
+      0,
+      16,
+      0,
+      "TEXT"
+    ],
+    [
+      14,
+      15,
+      0,
+      16,
+      3,
+      "TEXT"
+    ],
+    [
+      15,
+      16,
+      0,
+      14,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        -6.40008544921875,
+        -2.399932861328125
+      ]
+    }
+  },
+  "version": 0.4
+}
